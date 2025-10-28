@@ -1,19 +1,9 @@
 var fs = require('fs');
 
-// fs.readFile('readMe.txt', 'utf8', function(err, data) {
-//     fs.writeFile('writeMe.txt', data);
-// });
-
-fs.readFile('readMe.txt', 'utf8', function(err, data) {
+fs.unlink('writeMe.txt', (err) => {
     if (err) {
-        console.error('readFile error:', err);
+        console.error('Error deleting file:', err);
         return;
     }
-    fs.writeFile('writeMe.txt', data, function(err) {
-        if (err) {
-            console.error('writeFile error:', err);
-            return;
-        }
-        console.log('writeMe.txt saved');
-    });
+    console.log('writeMe.txt was deleted');
 });
