@@ -1,9 +1,19 @@
 var fs = require('fs');
 
-fs.unlink('writeMe.txt', (err) => {
-    if (err) {
-        console.error('Error deleting file:', err);
-        return;
-    }
-    console.log('writeMe.txt was deleted');
+// fs.mkdirSync('stuff');
+
+// fs.rmdirSync('stuff');
+
+// fs.mkdir('stuff', function() {
+//     fs.readFile('readMe.txt', 'utf8', function(err, data) {
+//         fs.writeFile('./stuff/writeMe.txt', data, function() {
+//             console.log('file written');
+//         });
+//     });
+// });
+
+fs.unlink('./stuff/writeMe.txt', function() {
+    fs.rmdir('stuff', function() {
+        console.log('stuff deleted');
+    });
 });
