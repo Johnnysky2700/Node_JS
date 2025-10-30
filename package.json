@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Johnnysky2700/Node_JS#readme",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^5.1.0"
   }
 }
